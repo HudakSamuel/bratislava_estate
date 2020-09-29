@@ -10,7 +10,7 @@ The final result is a responsive dynamic website made to mimic lightweight real 
 - Some shared PHP(html),CSS and JS files were placed in shared folder if they were used on multiple subpages
 - In _config.scss are located all shared variables, functions and classes
 
-#Backend
+# Backend
 - Backend is made according to MVC model. All backend API is located in backend folder
 - It mostly consits of 3 parts: properties API, users API and shared API
 - Properties are focused on adding, editing and displaying real estate posts
