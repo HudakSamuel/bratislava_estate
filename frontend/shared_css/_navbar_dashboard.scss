@@ -1,0 +1,176 @@
+header{
+    background-color: #3a4457;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 0;
+
+    .logo{
+        margin-left: 2em;
+        h1{
+            display: inline-block;
+            font-size: 2.2rem;
+        }
+        #first-part{
+            color: $primary-color;
+        }
+
+        #second-part{
+            color: white;
+        }
+    }
+
+    nav{
+        margin-right: 1em;
+        ul{
+            
+            li{
+                display: inline-block;
+                font-size: 1.3rem;
+                margin: 0 0.5em;
+                
+                a{
+                    text-decoration: none;
+                    color: white;
+                    text-transform: uppercase;
+                }
+
+                a:hover,a:focus{
+                    @include text-hover($primary-color);
+                }
+            }
+
+            .logout{
+                a{
+                    color: red;
+                }
+
+                a:hover,a:focus{
+                    @include text-hover(lighten(red,25));
+                }
+            }
+        }
+        
+    }
+
+    .fa-bars{
+        display: none;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 900px){
+    header{
+        .logo{
+            h1{
+                font-size: 1.9rem;
+            }
+        }
+
+        nav{
+            ul{
+                li{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px){
+    header{
+        .logo{
+            h1{
+                font-size: 1.3rem;
+            }
+        }
+
+        .menu{
+            visibility: hidden;
+            display: block;
+            position: absolute;
+            top: 6.1em;
+            width: 100%;
+            background-color: #eeeeee;
+            z-index: 20;
+            padding-bottom: 0.5em;
+            
+
+            li{
+                display: block;
+                border-bottom: 1px solid lighten($hrBreak-color,20);
+                margin: 1em;
+                padding: 0.5em;
+                width: 90%;
+                
+                a{
+                    color: black;
+                    font-size: 0.9rem;
+                    font-weight: medium;
+                    padding: 1em;
+                }
+            }
+        }
+
+        .open{
+            visibility: visible;
+        }
+
+        .fa-bars{
+            display: inline;
+            font-size: 1.7rem;
+            padding: 1em;
+            color: $primary-color;
+        }
+    }
+}
+
+@media (min-width: 451px) and (max-width: 700px){
+    header{
+
+        .menu{
+            visibility: hidden;
+            display: block;
+            position: absolute;
+            top: 6.1em;
+            width: 100%;
+            background-color: #eeeeee;
+            z-index: 20;
+            padding-bottom: 0.5em;
+            
+
+            li{
+                display: block;
+                border-bottom: 1px solid lighten($hrBreak-color,20);
+                margin: 1em;
+                padding: 0.5em;
+                width: 90%;
+                
+                a{
+                    color: black;
+                    font-size: 0.9rem;
+                    font-weight: medium;
+                    padding: 1em;
+                }
+            }
+        }
+
+        .open{
+            visibility: visible;
+        }
+        
+        .logo{
+            h1{
+                font-size: 1.3rem;
+            }
+        }
+        
+        .fa-bars{
+            display: inline;
+            font-size: 1.7rem;
+            padding: 1em;
+            color: $primary-color;
+        }
+
+        
+    }
+}

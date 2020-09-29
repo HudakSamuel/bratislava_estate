@@ -1,0 +1,249 @@
+%navbar{
+    position: absolute;
+    width: 100%;
+    background-color: rgba(40, 55, 80, 0.6);
+    display: flex;
+    justify-content: center;
+    z-index: 20;
+}
+
+@mixin navbar-handheld(){
+    .navbar-upper{
+        visibility: hidden;
+    }
+
+    .navbar-lower{
+        top: 0;
+        padding: 0;
+
+        .container{
+            width: 100%;
+            height: 5em;
+            padding: 0;
+
+            .menu{
+                margin: 0;
+                visibility: hidden;
+            }
+
+            .fa-bars{
+                position: absolute;
+                visibility: visible;
+                right: 0;
+                font-size: 1.7rem;
+                padding: 1em;
+                bottom: 0.1em;
+                color: $primary-color;
+            }
+
+            .open{
+                visibility: visible;
+                position: absolute;
+                width: 100%;
+                top: 5em;
+                background-color: #eeeeee;
+                z-index: 20;
+                padding-bottom: 0.5em;
+
+                ul{
+                    display: block;
+                    border-bottom: 1px solid lighten($hrBreak-color,20);
+                    margin: 1em;
+                    padding: 0.5em;
+                    width: 90%;
+                }
+
+                a{
+                    color: black;
+                    font-size: 0.9rem;
+                    font-weight: medium;
+                    padding: 1em;
+                    margin: 0;
+                }
+
+                #login{
+                    background-color: transparent;
+                    border: none;
+                    padding: 1em;
+                }
+            }
+        }
+
+    }
+
+    .logo{
+        margin: 1.5em 1em;
+        max-width: 50%;
+
+        #first-part{
+            font-size: 1.1rem;
+        }
+
+        #second-part{
+            font-size: 1.1rem;
+        }
+    }
+}
+
+/*===============================================*/
+.navbar-upper{
+    @extend %navbar;
+
+    .container{
+        width: 60%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 0.5em;
+
+        .left{
+            display: inline-block;
+
+            i{
+                font-size: 1.05rem;
+                color: #a8afb8;
+            }
+
+            i:hover,i:focus{
+                @include text-hover(white);
+            }
+
+            span{
+                font-family: 'Open Sans', sans-serif;
+                margin-left: 0.5em;
+            }
+
+            .fa-envelope-o{
+                margin-left: 1em;
+            }
+        }
+
+        .right{
+            float: right;
+            
+            i{
+                font-size: 1.2rem;
+                color: #a8afb8;
+            }
+
+            i:hover,i:focus{
+                @include text-hover(white);
+            }
+
+        }
+    }
+}
+
+.navbar-lower{
+    @extend %navbar;
+    top: 2.6em;
+    
+    .container{
+        width: 60%;
+        align-self: center;
+        padding: 1em;
+
+        .menu{
+            float: right;
+            margin-top: 0.5em;
+
+            ul{
+                display: inline-block;
+            }
+
+            a{
+                text-decoration: none;
+                font-size: 1.1rem;
+                color: white;
+                text-transform: uppercase;
+                margin-left: 1.5em;
+            }
+
+            a:hover,a:focus{
+                @include text-hover($primary-color);
+            }
+
+            #login{
+                @extend %primary-button;
+            }
+
+            #login:hover,#login:focus{
+                @extend %button-hover;
+            }
+        }
+
+        .fa-bars{
+            visibility: hidden;
+        }
+        
+    }
+}
+
+.logo{
+    max-width: 30%;
+    display: inline-block;
+
+    h1{
+        display: inline-block;
+    }
+
+    #first-part{
+        font-size: 1.7rem;
+        color: #ffb606;
+        font-weight: medium;
+    }
+    
+    #second-part{
+        font-size: 1.7rem;
+        color: white;
+        font-weight: medium;
+    }
+}
+
+
+@media (max-width: 600px){
+    @include navbar-handheld();
+}
+
+@media (min-width: 601px) and (max-width: 990px){
+    @include navbar-handheld();
+    
+    .navbar-upper{
+        visibility: visible;
+        
+        .container{
+            width: 97%;
+
+            .left{
+                i{
+                    font-size: 1rem;
+                }
+            }
+
+            .right{
+                i{
+                    font-size: 1rem;
+                    color: #a8afb8;
+                }
+            }
+        }
+    }
+
+    .navbar-lower{
+        top: 2.6em;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1365px){
+    .navbar-upper{
+        .container{
+           width: 85%; 
+        }
+        
+    }
+
+    .navbar-lower{
+        .container{
+           width: 85%; 
+        }
+        
+    }
+}

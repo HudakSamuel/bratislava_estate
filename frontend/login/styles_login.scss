@@ -1,0 +1,12 @@
+@import '../shared_css/config';
+@import '../shared_css/footer';
+@import '../shared_css/navbar';
+@import '../shared_css/banner';
+@import 'login';
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}

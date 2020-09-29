@@ -1,0 +1,308 @@
+.admin-panel{
+    display: flex;
+    height: 92.9vh;
+
+    .left-side{
+        flex-grow: 1;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: darken(#3a4457,10);
+        
+        img{
+            max-width: 100px;
+            height: auto;
+            border: solid 3px black;
+            border-radius: 50px;
+            color: white;
+        }
+
+        h3{
+            color: white;
+            font-size: 1.7em; 
+        }
+       
+    }
+
+    .right-side{
+        flex-grow: 9;
+        height: 100%;
+        background-color: $secondary-background-color;
+        overflow-y: scroll;
+
+        .return{
+            margin-left: 4em;
+            margin-top: 2em;
+        
+            .fa-arrow-left{
+                color: $primary-color;
+                font-size: 1.5rem;
+            }
+        
+            a{
+                font-size: 1.5rem;
+                color: $primary-color;
+                text-decoration: none;
+            }
+        }
+    }
+
+
+
+}
+
+.property-input-container{
+    width: 50%;
+    padding: 1em 0;
+    margin: auto;
+    margin-top: 2em;
+    box-shadow: 0px 1px 7px 1px lightgrey;
+
+    .property-input-form{
+        width: 80%;
+        margin: 1em;
+
+        .form-control{
+            margin-bottom: 1em;
+
+            #title{
+                @extend %login-input;
+            }
+    
+            textarea{
+                @extend %login-input;
+                height: 30vh;
+            }
+    
+            textarea:focus{
+                box-shadow: 0px 0px 5px 0px rgba(116,183,232,1);
+                border-color: rgba(116,183,232,1);
+            }
+    
+            input:focus{
+                box-shadow: 0px 0px 5px 0px rgba(116,183,232,1);
+                border-color: rgba(116,183,232,1);
+            }
+        }
+
+        ul{
+            li{
+                display: inline-block;
+                list-style-type: none;
+                margin-right: 1em;
+                .rooms{
+                    display: inline-block;
+                    margin-bottom: 1em;
+                    @extend %login-input;
+                    width: 7em;
+                    padding-right: 0.5em;
+                }
+            }
+        }
+
+        .price{
+            @extend %login-input;
+            width: 10em;
+            margin-bottom: 1em;
+        }
+        .price::-webkit-outer-spin-button,
+        .price::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        .price[type=number] {
+            -moz-appearance: textfield;
+          }
+
+        #gallery-photo-add{
+            @extend %login-input;
+            width: 17em;
+        }
+
+        select{
+            margin-bottom: 1em;
+            @extend %login-input;
+            width: 10em;
+            border-radius: 0;
+        }
+
+        #propertyImage{
+            font-size: 1rem;
+        }
+
+        .gallery{
+            margin-bottom: 2em;
+
+            img{
+                height: 150px;
+                width: 150px;
+                margin: 0.5em;
+            }
+        }
+
+
+        small{
+            display: block;
+            visibility: visible;
+            color: red;
+        }
+
+        .submit-button{
+            input{
+                @extend %primary-button;
+                padding: 1em 4em;
+                cursor: pointer;
+            }
+
+            input:hover,input:focus{
+                @extend %button-hover;
+            }
+        }
+        
+    }
+}
+
+@media (min-width: 1270px) and (max-width: 1580px){
+    .admin-panel{
+        .left-side{
+            flex: 2;
+        }
+
+        .right-side{
+            flex: 8;
+            .property-input-container{
+                width: 60%;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 900px) and (max-width: 1269px){
+    .admin-panel{
+        .left-side{
+            flex: 3;
+        }
+
+        .right-side{
+            flex: 7;
+            
+            .property-input-container{
+                width: 75%;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 701px) and (max-width: 900px){
+    .admin-panel{
+        .left-side{
+            flex: 3;
+        }
+
+        .right-side{
+            flex: 7;
+            
+            .property-input-container{
+                width: 85%;
+
+                
+            }
+        }
+    }
+
+}
+
+@media (max-width: 450px){
+    .admin-panel{
+        display: inline;
+        
+        .left-side{
+            padding: 1em 0;
+            
+        }
+
+        .right-side{
+            overflow-y: hidden;
+
+            .property-input-container{
+                width: 90%;
+
+                .property-input-form{
+                    width: 100%;
+
+                    #propertyHeader{
+                        width: 90%;
+                    }
+
+                    textarea{
+                        width: 90%;
+                    }
+
+                    .submit-button{
+                        
+                        input{
+                            width: 90%;
+                        }
+                        
+                    }
+
+                    ul{
+                        li{
+                            display: block;
+                        }
+                    }
+
+                    .gallery{
+                        img{
+                            max-width: 100px;
+                            max-height: 100px;
+                        }
+                    }
+                }
+
+                
+            }
+
+        }
+    }
+
+}
+
+@media (min-width: 451px) and (max-width: 700px){
+    .admin-panel{
+        display: inline;
+        
+        .left-side{
+            padding: 1.5em 0;
+            
+        }
+
+        .right-side{
+            overflow-y: hidden;
+
+            .property-input-container{
+                width: 80%;
+
+                ul{
+                    li{
+                        display: block;
+                    }
+                }
+
+                .gallery{
+                    img{
+                        max-width: 100px;
+                        max-height: 100px;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+

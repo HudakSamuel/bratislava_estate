@@ -1,0 +1,109 @@
+.login{
+    padding: 7em 0;
+
+    .container{
+        /*login-form-container class in _config.scss here*/
+        padding-bottom: 0;
+
+        form{
+            .invalid-login{
+                width: 100%;
+                margin: 0;
+                padding: 1em;
+                background-color: #f2dede;
+                color: #a94442;
+                border: solid 1px #ebccd1;
+                box-shadow: 0px 1px 3px 1px lightgrey;
+            }
+
+            .header{
+                padding-top: 1em;
+                margin-bottom: 1em;
+                h2{
+                    font-size: 1.5rem;
+                    margin-left: 1em;
+                    font-weight: 400;
+                        
+                }
+        
+                a{
+                    margin-left: 1em;
+                    text-decoration: none;
+                    color: $primary-color;
+                    padding: 0.5em;
+                }
+        
+                a:hover,a:focus{
+                    @include text-hover(navy);
+                }
+            }
+        
+            .body{
+                   
+                /*login-form-container-wrapper class in _config.scss here*/
+        
+                /*input-label class in _config.scss here*/
+        
+                input{
+                    @extend %login-input;
+                    margin-bottom: 1em;
+                }
+        
+                input:focus{
+                    box-shadow: 0px 0px 5px 0px rgba(116,183,232,1);
+                    border-color: rgba(116,183,232,1);
+                }
+        
+                .submit-button{
+                    @extend %submit-button;
+                    margin-bottom: 0.5em;
+                }
+            }
+        
+            .footer{
+                /*login-form-container-wrapper class in _config.scss here*/
+                padding-bottom: 1em;
+        
+                button{
+                    width: 100%;
+                    padding: 0.75em;
+                    border: solid 2px black;
+                    border-radius: 4px;
+                    background-color: white;
+                }
+                a{
+                    text-decoration: none;
+                    color: black;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px){
+    
+    .login{
+
+        .invalid-login{
+            width: 85%;
+        }
+    }
+    
+}
+
+@media (min-width: 601px) and (max-width: 990px){
+    .login{
+        .invalid-login{
+            width: 50%;
+        }
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1365px){
+    .login{
+        .invalid-login{
+            width: 35%;
+        }
+    }
+}

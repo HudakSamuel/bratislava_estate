@@ -1,0 +1,11 @@
+@import 'shared_css/config';
+@import 'index/index';
+@import 'shared_css/navbar';
+@import 'shared_css/footer';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}

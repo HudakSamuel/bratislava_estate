@@ -1,0 +1,300 @@
+@import "../shared_css/config";
+
+.admin-panel{
+    display: flex;
+    height: 92.9vh;
+
+    .left-side{
+        flex-grow: 2;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: darken(#3a4457,10);
+        
+        img{
+            max-width: 100px;
+            height: auto;
+            border: solid 3px black;
+            border-radius: 50px;
+            color: white;
+        }
+
+        h3{
+            color: white;
+            font-size: 1.7rem;
+       
+        }
+       
+    }
+
+    .right-side{
+        flex-grow: 8;
+        height: 100%;
+        background-color: $secondary-background-color;
+        overflow-y: scroll;
+
+        .button-group{
+            margin-left: 3em;
+            margin-top: 3em;
+
+            ul{
+                li{
+                    list-style-type: none;
+                    a{
+                        @extend %primary-button;
+                        text-decoration: none;
+                        
+
+                    }
+
+                    a:hover,a:focus{
+                        @extend %second-button-hover;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .hello{
+        width: 50%;
+        margin-left: 15%;
+        margin-top: 3em;
+        border: solid 2px green;
+        border-radius: 5px;
+        background-color: lightgreen;
+       p{
+           color: darkgreen;
+           padding: 0.3em;
+           padding-left: 1em;
+       }
+    }
+
+    .filler-text{
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h2{
+            font-size: 2rem;
+            color: $hrBreak-color;
+        }
+    }
+
+    table{
+        width: 70%;
+        margin: auto;
+        margin-top: 2em;
+
+        tr{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2em;
+            td{
+                flex: 7;
+            }
+
+            .manage-property{
+                flex: 2;
+                margin-left: 1em;
+
+                a{
+                    padding: 0.5em;
+                    text-decoration: none;
+                    font-size: 1.1rem;
+                }
+
+                .edit{
+                    color: orange;
+                }
+
+                .edit:hover,.edit:focus{
+                    @include text-hover(darken(orange,15));
+                }
+
+                .delete{
+                    color: darkred; 
+                }
+
+                .delete:hover,.delete:focus{
+                    @include text-hover(lighten(darkred,25));
+                }
+            }
+        }
+        
+    }
+
+}
+
+@media (min-width: 1270px) and (max-width: 1580px){
+    .admin-panel{
+        .left-side{
+            flex: 2;
+        }
+
+        .right-side{
+            flex: 8;
+            table{
+                width: 95%;
+
+            }
+        }
+    }
+
+}
+
+@media (min-width: 900px) and (max-width: 1269px){
+    .admin-panel{
+        .left-side{
+            flex: 3;
+        }
+
+        .right-side{
+            flex: 7;
+            table{
+                width: 70%;
+
+                td{
+                    flex-grow: 6;
+                }
+
+                .manage-property{
+                    flex-grow: 4;
+                }
+
+            }
+        }
+        .hello{
+            margin: auto;
+            margin-top: 3em;
+            width: 60%;
+        }
+
+        .filler-text{
+            h2{
+                font-size: 1.7rem;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 701px) and (max-width: 900px){
+    .admin-panel{
+        .left-side{
+            flex: 3;
+        }
+
+        .right-side{
+            flex: 7;
+            table{
+                width: 85%;
+
+                td{
+                    flex-grow: 6;
+                }
+
+                .manage-property{
+                    flex-grow: 4;
+                }
+
+            }
+
+            .hello{
+                margin: auto;
+                margin-top: 3em;
+                width: 70%;
+            }
+
+            .filler-text{
+                h2{
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 450px){
+    .admin-panel{
+        display: inline;
+        
+        .left-side{
+            padding: 1em 0;
+            
+        }
+
+        .right-side{
+            overflow-y: hidden;
+
+            table{
+                width: 70%;
+
+                tr{
+                    flex-direction: column;
+                    flex: 7;
+                }
+
+            }
+        }
+
+        .hello{
+            margin-left: 0;
+            margin: auto;
+            margin-top: 3em;
+            width: 80%;
+        }
+
+        .filler-text{
+            height: 300px;
+            h2{
+                font-size: 0.9rem;
+            }
+        }
+        
+    }
+
+}
+
+@media (min-width: 451px) and (max-width: 700px){
+    .admin-panel{
+        display: inline;
+        
+        .left-side{
+            padding: 1.5em 0;
+            
+        }
+
+        .right-side{
+            overflow-y: hidden;
+            
+            table{
+                width: 50%;
+
+                tr{
+                    flex-direction: column;
+                }
+            }
+        }
+
+        .hello{
+            margin-left: 0;
+            margin: auto;
+            margin-top: 3em;
+            width: 65%;
+        }
+
+        .filler-text{
+            height: 300px;
+            h2{
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+}
+
