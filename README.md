@@ -16,3 +16,6 @@ The final result is a responsive dynamic website made to mimic lightweight real 
 - Properties are focused on adding, editing and displaying real estate posts
 - Users are focused on handling user login and registration
 - Shared contains some useful shared functions such as selectOne or selectAll which allow to efficiently get data from DB
+
+# Website link
+https://bratislava-estate.000webhostapp.com
